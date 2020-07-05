@@ -19,8 +19,6 @@ public class CalculatorParser {
         OperacionCompuesta ultima = operacion;
         String stringNumero = "";
         texto = "0+" + texto.replaceAll("\\s+","");
-
-        System.out.println(texto);
         
         for(int i = 0; i < texto.length(); i++){
             
