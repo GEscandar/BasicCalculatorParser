@@ -38,18 +38,13 @@ public class CalculatorParser {
                     operacion.agregarOperacion(ultima);
                 }
                 
-                else if(caracter == 'x' || caracter == '/'){//1-2*1/2*1
+                else if(caracter == 'x' || caracter == '/'){
                     
                     if(ultima.getSimbolo().equals( "/") || ultima.getSimbolo().equals("x")){
                         ultima.agregarOperacion(new OperacionSimple(numero));
                         OperacionCompuesta producto = FabricaDeOperaciones.crearOperacion(String.valueOf(caracter));
                         producto.agregarOperacion(ultima.obtenerUltima());
                         ultima.establecerUltima(producto);
-                    }
-                    else{
-                        ultima = FabricaDeOperaciones.crearOperacion(String.valueOf(caracter));
-                        ultima.agregarOperacion(numero);
-                        operacion.obtenerUltima().agregarOperacion(ultima);
                     }
                 }
                 
